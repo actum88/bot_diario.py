@@ -16,7 +16,7 @@ openai.api_key = OPENAI_API_KEY
 API_URL = f"https://api.z-api.io/instances/{INSTANCE_ID}/token/{TOKEN}/send-messages"
 
 DESTINATARIOS = [
-    '55SEUNUMERO1',
+    '5511983260077', '5511996898090'
 ]
 
 def gerar_relatorio_com_ia(pergunta):
