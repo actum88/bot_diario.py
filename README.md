@@ -74,16 +74,23 @@ PERGUNTAS = {
 }
 
 @app.route("/webhook", methods=["POST"])
-def receber_mensagem():
+def receber():
     data = request.get_json()
-    mensagem = data.get("message", "").strip()
     numero = data.get("phone")
+    mensagem = data.get("message", "").strip().lower()
 
+    # Respostas automáticas com base na mensagem recebida
     if mensagem in PERGUNTAS:
-        pergunta = PERGUNTAS[mensagem]
-        resposta = gerar_relatorio_com_ia(pergunta)
-    else:
+        resposta = gerar_resposta(PERGUNTAS[mensagem])
+    elif mensagem in ["oi", "olá", "ola", "bom dia", "boa tarde", "boa noite", "menu", "btc", "relatório", "relatorio"]:
         resposta = MENSAGEM_MENU
+    else:
+        resposta = (
+            "👋 Olá! Para acessar os relatórios BTC, digite uma das opções abaixo:\n\n"
+            "1️⃣ Relatório Técnico\n2️⃣ Projeção de Curto Prazo\n3️⃣ Últimas notícias\n"
+            "4️⃣ Relatório Detalhado PRO\n5️⃣ Relatório completo BTC\n\n"
+            "Ou apenas envie 'menu' para receber novamente a lista 😉"
+        )
 
     enviar_mensagem(numero, resposta)
     return jsonify({"status": "ok"})
