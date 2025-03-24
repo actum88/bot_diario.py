@@ -71,6 +71,7 @@ def gerar_resposta(pergunta):
         return f"Erro ao consultar a OpenAI: {e}"
 
 # === FLASK APP ===
+
 app = Flask(__name__)
 
 @app.route("/webhook", methods=["POST"])
