@@ -17,8 +17,7 @@ openai.api_key = OPENAI_API_KEY
 API_URL = f"https://api.z-api.io/instances/{INSTANCE_ID}/token/{TOKEN}/send-messages"
 
 # === Números que receberão o menu diário (coloque seu número com DDI 55 + DDD + número) ===
-DESTINATARIOS = ['5511983260077', '5511996898090' ,'5514996144947']
-
+DESTINATARIOS = ['5511983260077', '5511996898090', '5514996144947']
 
 # === Mensagem padrão (menu) ===
 MENSAGEM_MENU = """
