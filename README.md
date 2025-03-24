@@ -69,7 +69,7 @@ def gerar_resposta(pergunta):
         return f"Erro ao consultar IA: {e}"
 
 # === Configuração do Flask ===
-app = Flask(__bot.diario.py__)
+app = Flask(__name__)
 
 @app.route("/webhook", methods=["POST"])
 def receber():
