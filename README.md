@@ -1,4 +1,4 @@
-# bot-bitcoin-zapi-ai
+# bot_diario.py
 Bot para envio diário de relatórios BTC via Z-API com IA
 import schedule
 import time
